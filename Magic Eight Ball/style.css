@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap");
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: #2e4ae9;
+  --secondary-color: #5e5be7;
+  --text-color: #fff;
+  --box-shadow: 0 1rem 2rem rgba(50, 50, 50, 0.2);
+  --ball-color: rgb(0, 0, 0);
+  --ball-box-shadow: 0 0.5rem 3rem rgba(50, 50, 50, 0.2);
+}
+
+body {
+  height: 100vh;
+  background: linear-gradient(var(--primary-color), var(--secondary-color)) 0
+    100% no-repeat;
+  background-size: 100% 50%;
+}
+
+.container {
+  width: 30rem;
+  padding: 3rem;
+  text-align: center;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  left: 50%;
+  background-color: var(--text-color);
+  box-shadow: var(--box-shadow);
+  border-radius: 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Poppins", sans-serif;
+}
+
+h1 {
+    margin-bottom: 1rem;
+}
+
+p {
+    margin-bottom: 2rem;
+}
+
+.eightBall {
+    width: 20rem;
+    height: 20rem;
+    background-color: var(--ball-color);
+    color: var(--text-color);
+    margin: 0 auto;
+    border-radius: 100%;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    box-shadow: var(--ball-box-shadow);
+}
+
+button {
+    background-color: var(--primary-color);
+    border: none;
+    outline: none;
+    color: var(--text-color);
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    padding: 1rem 0;
+    width: 15rem;
+    letter-spacing: 0.1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.5s ease-in-out;
+  }
+  
+  button:hover {
+    background-color: var(--secondary-color);
+    background-size: 100% 50%;
+  }
+
+  .shake {
+    animation: shake 0.5s infinite;
+  }
+  
+  @keyframes shake {
+    0% {
+      transform: rotate(8deg);
+    }
+    50% {
+      transform: rotate(-8deg);
+    }
+    100% {
+      transform: rotate(8deg);
+    }
+  }
+  
