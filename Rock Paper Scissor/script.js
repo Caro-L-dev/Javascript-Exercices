@@ -51,4 +51,4 @@ function checker(image){
 
     document.getElementById("computer_score").innerHTML = computer_score;
     document.getElementById("user_score").innerHTML = user_score;
-}
+};
