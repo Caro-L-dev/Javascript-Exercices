@@ -29,9 +29,18 @@ function decremenT() {
     minutesDiv.textContent = Math.floor(seconds / 60);
     secondsDiv.textContent = seconds % 60 > 9 ? seconds % 60: `0${seconds % 60}`;
 
+    if (circle.classlist.contains("danger")) {
+        circle.classlist.remove("danger");
+    }
+
     if ( seconds > 0 ) {
+        perc = Math.ceil(((totalSeconds - seconds) / totalSeconds) * 100);
+        setProgress(perc);
         seconds--;
-        initial = window.setTimeout("decremenT()", 100);
+        initial = window.setTimeout("decremenT()", 1000);
+        if (seconds < 10) {
+            circle.classlist.add("danger");
+        }
     } else {
         minutes = 0;
         seconds = 0;
@@ -46,6 +55,7 @@ function decremenT() {
             startBtn.classlist.remove("break");
             startBtn.textContent = "start focus";
             localStorage.setItem("btn", "focus");
+
         }
         startBtn.style.transform = "scale(1)";
     }
